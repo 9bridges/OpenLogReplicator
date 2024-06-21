@@ -42,6 +42,7 @@ namespace OpenLogReplicator {
         void appendHeader(typeScn scn, time_t timestamp, bool first, bool showDb, bool showXid);
         void appendAttributes();
         void appendSchema(const OracleTable* table, typeObj obj);
+        void appendSchema(const OracleTable* table, typeObj obj, const char* owner, uint64_t ownerLength, const char* name, uint64_t nameLength);
 
         void appendHex(uint64_t value, uint64_t length) {
             uint64_t j = (length - 1) * 4;
